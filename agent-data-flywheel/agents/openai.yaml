@@ -1,0 +1,4 @@
+interface:
+  display_name: "智能体数据飞轮分析"
+  short_description: "分析有效问题与不支持问数，结合证据评审 BadCase 并生成静态运营看板"
+  default_prompt: "使用 $agent-data-flywheel 分析四类智能体日志，完成有效问题、不支持问数和 BadCase 评审，并生成静态看板。"
