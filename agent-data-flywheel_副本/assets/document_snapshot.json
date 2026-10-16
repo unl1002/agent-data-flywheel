@@ -1,0 +1,537 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mode": "document_snapshot",
+    "generated_at": "2026-10-15T02:53:57.066371+00:00",
+    "source_files": [
+      "数据字段字典.md",
+      "数据字段说明与真实实例.md"
+    ],
+    "notes": [
+      "摘要取自字段文档，未加载全量JSON。",
+      "四份真实实例仅用于演示，内容有截断，项目名称显示别名。"
+    ]
+  },
+  "sources": {
+    "feedback": {
+      "status": "document_snapshot",
+      "records": 42,
+      "raw_records": 42,
+      "duplicates": null,
+      "errors": null
+    },
+    "guardrail": {
+      "status": "document_snapshot",
+      "records": 3280,
+      "raw_records": 3280,
+      "duplicates": null,
+      "errors": null
+    },
+    "dialogue": {
+      "status": "document_snapshot",
+      "records": 468,
+      "raw_records": 468,
+      "duplicates": null,
+      "errors": null
+    },
+    "inference": {
+      "status": "document_snapshot",
+      "records": 16201,
+      "raw_records": 16201,
+      "duplicates": null,
+      "errors": null
+    }
+  },
+  "metrics": {
+    "dialogue_records": {
+      "label": "对话导出记录",
+      "value": 468,
+      "unit": "count",
+      "source": "dialogue",
+      "basis": "document_snapshot"
+    },
+    "answer_nodes": {
+      "label": "回答节点",
+      "value": 11248,
+      "unit": "count",
+      "source": "dialogue",
+      "basis": "document_snapshot"
+    },
+    "feedback_records": {
+      "label": "反馈记录",
+      "value": 42,
+      "unit": "count",
+      "source": "feedback",
+      "basis": "document_snapshot"
+    },
+    "guardrail_records": {
+      "label": "护栏请求",
+      "value": 3280,
+      "unit": "count",
+      "source": "guardrail",
+      "basis": "document_snapshot"
+    },
+    "inference_records": {
+      "label": "推理请求",
+      "value": 16201,
+      "unit": "count",
+      "source": "inference",
+      "basis": "document_snapshot"
+    },
+    "feedback_match_count": {
+      "label": "文档报告反馈匹配",
+      "value": 1,
+      "unit": "count",
+      "source": "feedback",
+      "basis": "document_snapshot"
+    },
+    "scene_missing_rate": {
+      "label": "无场景记录占比",
+      "value": 0.6538461538461539,
+      "unit": "ratio",
+      "source": "dialogue",
+      "basis": "document_snapshot",
+      "numerator": 306,
+      "denominator": 468
+    },
+    "reason_coverage": {
+      "label": "反馈原因填写率",
+      "value": 0.023809523809523808,
+      "unit": "ratio",
+      "source": "feedback",
+      "basis": "document_snapshot",
+      "numerator": 1,
+      "denominator": 42
+    },
+    "feedback_link_rate": {
+      "label": "反馈关联覆盖",
+      "value": 0.023809523809523808,
+      "unit": "ratio",
+      "source": "feedback",
+      "basis": "document_snapshot",
+      "numerator": 1,
+      "denominator": 42
+    },
+    "dialogue_feedback_coverage": {
+      "label": "对话侧反馈覆盖",
+      "value": 0.002136752136752137,
+      "unit": "ratio",
+      "source": "dialogue",
+      "basis": "document_snapshot",
+      "numerator": 1,
+      "denominator": 468
+    },
+    "inference_http_200_rate": {
+      "label": "推理HTTP200占比",
+      "value": 0.999629652490587,
+      "unit": "ratio",
+      "source": "inference",
+      "basis": "document_snapshot",
+      "numerator": 16195,
+      "denominator": 16201
+    },
+    "conversation_count": {
+      "label": "独立多轮会话",
+      "value": null,
+      "unit": "count",
+      "source": null,
+      "basis": "document_snapshot",
+      "reason": "需要按conversationId去重"
+    },
+    "rated_feedback": {
+      "label": "已评价反馈",
+      "value": null,
+      "unit": "count",
+      "source": null,
+      "basis": "document_snapshot",
+      "reason": "文档未提供完整好差评分布"
+    },
+    "negative_feedback_rate": {
+      "label": "差评率",
+      "value": null,
+      "unit": "ratio",
+      "source": null,
+      "basis": "document_snapshot",
+      "reason": "需要已评价反馈明细"
+    },
+    "guardrail_block_rate": {
+      "label": "护栏请求拦截率",
+      "value": null,
+      "unit": "ratio",
+      "source": null,
+      "basis": "document_snapshot",
+      "reason": "需要核验每个请求的checkResults"
+    },
+    "dialogue_cost_p95_ms": {
+      "label": "对话耗时P95",
+      "value": null,
+      "unit": "ms",
+      "source": null,
+      "basis": "document_snapshot",
+      "reason": "需要全量有效耗时"
+    },
+    "first_token_p95_ms": {
+      "label": "首token延迟P95",
+      "value": null,
+      "unit": "ms",
+      "source": null,
+      "basis": "document_snapshot",
+      "reason": "需要全量有效测量"
+    },
+    "accuracy": {
+      "label": "回答准确率",
+      "value": null,
+      "unit": "ratio",
+      "source": null,
+      "basis": "document_snapshot",
+      "reason": "缺少评测标签和标准答案"
+    },
+    "rag_recall": {
+      "label": "RAG召回率",
+      "value": null,
+      "unit": "ratio",
+      "source": null,
+      "basis": "document_snapshot",
+      "reason": "未接入检索日志和评测"
+    },
+    "resolution_rate": {
+      "label": "历史BadCase解决率",
+      "value": null,
+      "unit": "ratio",
+      "source": null,
+      "basis": "document_snapshot",
+      "reason": "缺少修复和回归记录"
+    }
+  },
+  "distributions": {
+    "scenes": [
+      {
+        "name": "未标注场景",
+        "value": 306
+      },
+      {
+        "name": "设备诊断",
+        "value": 92
+      },
+      {
+        "name": "数据查询",
+        "value": 70
+      }
+    ],
+    "request_models": [
+      {
+        "name": "netmo-qwen3-32b",
+        "value": 16075
+      },
+      {
+        "name": "netmo-default",
+        "value": 126
+      }
+    ],
+    "http_status": [
+      {
+        "name": "200",
+        "value": 16195
+      },
+      {
+        "name": "403",
+        "value": 6
+      }
+    ],
+    "response_formats": []
+  },
+  "records": [
+    {
+      "id": "feedback:example-report",
+      "source": "feedback",
+      "question": "生成报告",
+      "answer": "",
+      "signals": [
+        "negative_feedback",
+        "feedback_reason_missing"
+      ],
+      "evidence": [
+        {
+          "id": "feedback:example-report:e0",
+          "path": "question",
+          "excerpt": "生成报告"
+        },
+        {
+          "id": "feedback:example-report:e1",
+          "path": "feedback",
+          "excerpt": "-1"
+        },
+        {
+          "id": "feedback:example-report:e2",
+          "path": "reason",
+          "excerpt": "null（未提供反馈原因）"
+        }
+      ],
+      "project": "示例云平台项目",
+      "product": "iMasterCloud",
+      "version": "26.2.0.T3",
+      "chat_id": "ba3870f0-5d2b-4f44-9343-d942fa0a3f9e",
+      "time": 1784815992661,
+      "feedback": -1,
+      "raw_locator": "数据字段说明与真实实例.md:57"
+    },
+    {
+      "id": "guardrail:example-check",
+      "source": "guardrail",
+      "question": "查询X2-170下的ONU数量",
+      "answer": "",
+      "signals": [
+        "check_item_skipped"
+      ],
+      "evidence": [
+        {
+          "id": "guardrail:example-check:e0",
+          "path": "body.questions[0]",
+          "excerpt": "查询X2-170下的ONU数量"
+        },
+        {
+          "id": "guardrail:example-check:e1",
+          "path": "responseData.checkResults[0].isLegal",
+          "excerpt": "true"
+        },
+        {
+          "id": "guardrail:example-check:e2",
+          "path": "body.ignore_items",
+          "excerpt": "[\"topic_limit\"]"
+        }
+      ],
+      "project": "示例产品测试项目",
+      "product": "NeoSight",
+      "version": "iMaster NeoSight 25.3.0.SPC030",
+      "time": 1789607472337,
+      "response_status": 200,
+      "cost_ms": 34,
+      "raw_locator": "数据字段说明与真实实例.md:191"
+    },
+    {
+      "id": "dialogue:example-diagnosis",
+      "source": "dialogue",
+      "question": "诊断117.108.219.31无法上网",
+      "answer": "{\"piuName\":\"aico-diagnosis\",\"piuVersion\":\"1.0.0\",\"data\":{\"terminalIp\":\"117.108.219.31\",\"faultType\":\"network-interrupted\"}}\n{\"piuVersion\":\"1.0.0\",\"answers\":{\"context\":{\"taskId\":\"a64f5eed-fd0b-4ade-b39c-2a7af07f6e46\",\"linkInfoList\":[{\"relationName\":\"normalEdge\",\"resId\":\"6b6339cb-b021-42b0-82ea-cf5f08a02f1e\",\"nativeId\":\"136...\"],\"step\":\"diagnosis\"},\"piuName\":\"aico-diagnosis\"}\n{\"piuVersion\":\"1.0.0\",\"answers\":{\"step\":\"diagnosis\",\"data\":{\"id\":\"a64f5eed-fd0b-4ade-b39c-2a7af07f6e46\",\"status\":\"END\",\"diagnosisUnitList\":[{\"unitType\":\"NODE\",\"diagnoseStatus\":\"END\",\"diagnosisUnitId\":...}],\"piuName\":\"aico-diagnosis\"}\n{\"piuVersion\":\"1.0.0\",\"answers\":{\"step\":\"finish\"},\"piuName\":\"aico-diagnosis\"}",
+      "signals": [
+        "end_followed_by_answer",
+        "document_excerpt_truncated",
+        "outer_time_precedes_ask"
+      ],
+      "evidence": [
+        {
+          "id": "dialogue:example-diagnosis:e0",
+          "path": "detail.question",
+          "excerpt": "诊断117.108.219.31无法上网"
+        },
+        {
+          "id": "dialogue:example-diagnosis:e1",
+          "path": "detail.costTime",
+          "excerpt": "32008"
+        },
+        {
+          "id": "dialogue:example-diagnosis:e2",
+          "path": "detail.answers[6:10]",
+          "excerpt": "END节点后仍有3个ANSWER节点，最后一个为step=finish；diagnosisUnitList的内容在文档中有省略。"
+        },
+        {
+          "id": "dialogue:example-diagnosis:e3",
+          "path": "detail.feedback",
+          "excerpt": "0"
+        }
+      ],
+      "project": "示例校园项目",
+      "product": "NeoSight",
+      "version": "iMaster NeoSight 25.3.0.SPC030",
+      "chat_id": "afb94c60-5de2-4899-b928-b727f10a3f4d",
+      "conversation_id": "c343277e-91c5-464a-b4e1-03caa07fc8e7",
+      "scene": "diagnose",
+      "time": 1789519634081,
+      "feedback": 0,
+      "cost_ms": 32008,
+      "nodes": [
+        {
+          "time": 1789519634279,
+          "level": "DETAIL",
+          "type": "TEXT",
+          "status": "MESSAGE",
+          "recipe": "NeoSightBootRecipe",
+          "cost_ms": 56,
+          "text": "diagnose\n诊断117.108.219.31无法上网\n{\"terminalIp\":\"117.108.219.31\",\"faultType\":\"network-interrupted\"}\ndiagnose\n诊断117.108.219.31无法上网\n",
+          "truncated": false
+        },
+        {
+          "time": 1789519634415,
+          "level": "DETAIL",
+          "type": "TEXT",
+          "status": "MESSAGE",
+          "recipe": "NeoSightBootRecipe",
+          "cost_ms": 47,
+          "text": "[\"诊断117.108.219.31无法上网\"]\n[\"topic_limit\"]\n",
+          "truncated": false
+        },
+        {
+          "time": 1789519634509,
+          "level": "TITLE",
+          "type": "TEXT",
+          "status": "MESSAGE",
+          "recipe": "NeoSightBootRecipe",
+          "cost_ms": null,
+          "text": "安全检查",
+          "truncated": false
+        },
+        {
+          "time": 1789519634698,
+          "level": "DETAIL",
+          "type": "TEXT",
+          "status": "MESSAGE",
+          "recipe": "NeoSightBootRecipe",
+          "cost_ms": 196,
+          "text": "{\"checkResults\":[{\"isLegal\":true,\"response\":\"\",\"question\":\"诊断117.108.219.31无法上网\"}]}\n",
+          "truncated": false
+        },
+        {
+          "time": 1789519634838,
+          "level": "TITLE",
+          "type": "TEXT",
+          "status": "MESSAGE",
+          "recipe": "NeoSightBootRecipe",
+          "cost_ms": null,
+          "text": "生成结果",
+          "truncated": false
+        },
+        {
+          "time": 1789519634877,
+          "level": "ANSWER",
+          "type": "PIU",
+          "status": "MESSAGE",
+          "recipe": "NeoSightBootRecipe",
+          "cost_ms": 44,
+          "text": "{\"piuName\":\"aico-diagnosis\",\"piuVersion\":\"1.0.0\",\"data\":{\"terminalIp\":\"117.108.219.31\",\"faultType\":\"network-interrupted\"}}",
+          "truncated": false
+        },
+        {
+          "time": 1789519634911,
+          "level": "CONCEAL",
+          "type": "TEXT",
+          "status": "END",
+          "recipe": null,
+          "cost_ms": null,
+          "text": "",
+          "truncated": false
+        },
+        {
+          "time": 1789519639682,
+          "level": "ANSWER",
+          "type": "PIU",
+          "status": "MESSAGE",
+          "recipe": null,
+          "cost_ms": null,
+          "text": "{\"piuVersion\":\"1.0.0\",\"answers\":{\"context\":{\"taskId\":\"a64f5eed-fd0b-4ade-b39c-2a7af07f6e46\",\"linkInfoList\":[{\"relationName\":\"normalEdge\",\"resId\":\"6b6339cb-b021-42b0-82ea-cf5f08a02f1e\",\"nativeId\":\"136...\"],\"step\":\"diagnosis\"},\"piuName\":\"aico-diagnosis\"}",
+          "truncated": true
+        },
+        {
+          "time": 1789519666024,
+          "level": "ANSWER",
+          "type": "PIU",
+          "status": "MESSAGE",
+          "recipe": null,
+          "cost_ms": null,
+          "text": "{\"piuVersion\":\"1.0.0\",\"answers\":{\"step\":\"diagnosis\",\"data\":{\"id\":\"a64f5eed-fd0b-4ade-b39c-2a7af07f6e46\",\"status\":\"END\",\"diagnosisUnitList\":[{\"unitType\":\"NODE\",\"diagnoseStatus\":\"END\",\"diagnosisUnitId\":...}],\"piuName\":\"aico-diagnosis\"}",
+          "truncated": true
+        },
+        {
+          "time": 1789519666089,
+          "level": "ANSWER",
+          "type": "PIU",
+          "status": "MESSAGE",
+          "recipe": null,
+          "cost_ms": null,
+          "text": "{\"piuVersion\":\"1.0.0\",\"answers\":{\"step\":\"finish\"},\"piuName\":\"aico-diagnosis\"}",
+          "truncated": false
+        }
+      ],
+      "truncated": true,
+      "raw_locator": "数据字段说明与真实实例.md:391"
+    },
+    {
+      "id": "inference:example-inference",
+      "source": "inference",
+      "question": "您好",
+      "answer": "文档只提供SSE片段，未提供完整最终回复。",
+      "signals": [
+        "model_route_difference",
+        "document_excerpt_truncated"
+      ],
+      "evidence": [
+        {
+          "id": "inference:example-inference:e0",
+          "path": "body.messages.user",
+          "excerpt": "您好"
+        },
+        {
+          "id": "inference:example-inference:e1",
+          "path": "body.model / responseData.model",
+          "excerpt": "netmo-qwen3-32b / netmo-qwen3p6-27b"
+        },
+        {
+          "id": "inference:example-inference:e2",
+          "path": "firstTokenLatency",
+          "excerpt": "387"
+        },
+        {
+          "id": "inference:example-inference:e3",
+          "path": "totalCost",
+          "excerpt": "3454"
+        }
+      ],
+      "project": "示例云校园项目",
+      "product": "cloudCampus",
+      "time": 1789609260735,
+      "response_status": 200,
+      "cost_ms": 3454,
+      "requested_model": "netmo-qwen3-32b",
+      "actual_model": "netmo-qwen3p6-27b",
+      "truncated": true,
+      "raw_locator": "数据字段说明与真实实例.md:763"
+    }
+  ],
+  "quality_issues": [
+    {
+      "code": "format_count_conflict",
+      "severity": "warning",
+      "message": "推理格式4512+11689+6=16207，超过报告总量6条，需原始JSON核验。",
+      "source": "inference"
+    },
+    {
+      "code": "user_type_conflict",
+      "severity": "warning",
+      "message": "推理userType在文档中分别写为1和0，暂不解释为真实/测试用户。",
+      "source": "inference"
+    },
+    {
+      "code": "timestamp_order",
+      "severity": "warning",
+      "message": "诊断实例外壳updateTime早于askTime 210430ms，不能用外壳时间推导会话耗时。",
+      "source": "dialogue"
+    },
+    {
+      "code": "partial_feedback_link",
+      "severity": "warning",
+      "message": "42条反馈仅1条关联对话，不能据此归因全部反馈。",
+      "source": "feedback"
+    },
+    {
+      "code": "missing_retrieval",
+      "severity": "info",
+      "message": "没有检索文档、得分、引用和检索评测，RAG指标待接入。",
+      "source": "dialogue"
+    },
+    {
+      "code": "excerpt_only",
+      "severity": "info",
+      "message": "本看板提供4个文档实例摘录，实例评审不能外推全量；项目名称使用别名。",
+      "source": null
+    }
+  ]
+}

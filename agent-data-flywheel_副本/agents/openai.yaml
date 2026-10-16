@@ -1,0 +1,4 @@
+interface:
+  display_name: "智能体数据飞轮 V2.1"
+  short_description: "逐批评审真实日志的响应支持、价值机会与 BadCase，生成所有统计可追溯的七页看板"
+  default_prompt: "使用 $agent-data-flywheel 分析四类原始 JSON，按 compact 批次逐条评审实际响应与价值机会，生成带全部统计血缘及原文定位的七页看板，保留缺失能力规则和金标的不确定性。"
