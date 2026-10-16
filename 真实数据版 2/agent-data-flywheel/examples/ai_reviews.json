@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "analysis_fingerprint": "41c90058168a7690635a6bb18d533439db1a15a062db64df354792640e39a42a",
+  "scope": "document_examples",
+  "items": [
+    {
+      "record_id": "feedback:example-report",
+      "validity": "valid",
+      "intent": [
+        "report"
+      ],
+      "support": "uncertain",
+      "badcase": "candidate",
+      "correctness": "uncertain",
+      "root_cause": "unknown",
+      "reason": "用户提出生成报告的业务诉求并给出差评；没有回答正文、差评原因或能力矩阵，不能确认产品不支持或回答错误。",
+      "evidence_refs": [
+        "feedback:example-report:e0",
+        "feedback:example-report:e1",
+        "feedback:example-report:e2"
+      ],
+      "capability_refs": [],
+      "evaluation_refs": [],
+      "confidence": 0.9,
+      "suggested_action": "补齐报告范围、完整回答和产品能力，再确认问题与归因。"
+    },
+    {
+      "record_id": "guardrail:example-check",
+      "validity": "valid",
+      "intent": [
+        "data_query"
+      ],
+      "support": "uncertain",
+      "badcase": "uncertain",
+      "correctness": "uncertain",
+      "root_cause": "unknown",
+      "reason": "查询指定OLT下的ONU数量是可识别的问数需求；当前只有护栏判定合规和跳过项，没有查询回答或确认的能力规则。",
+      "evidence_refs": [
+        "guardrail:example-check:e0",
+        "guardrail:example-check:e1",
+        "guardrail:example-check:e2"
+      ],
+      "capability_refs": [],
+      "evaluation_refs": [],
+      "confidence": 0.9,
+      "suggested_action": "关联查询答案与能力范围；核实跳过topic_limit是否符合配置。"
+    },
+    {
+      "record_id": "dialogue:example-diagnosis",
+      "validity": "valid",
+      "intent": [
+        "diagnosis"
+      ],
+      "support": "uncertain",
+      "badcase": "uncertain",
+      "correctness": "uncertain",
+      "root_cause": "unknown",
+      "reason": "问题明确表达终端无法上网的诊断需求；END后仍有答案符合该实例的异步链路事实，且结果摘录有截断，不能据此判定诊断失败或成功。",
+      "evidence_refs": [
+        "dialogue:example-diagnosis:e0",
+        "dialogue:example-diagnosis:e1",
+        "dialogue:example-diagnosis:e2"
+      ],
+      "capability_refs": [],
+      "evaluation_refs": [],
+      "confidence": 0.9,
+      "suggested_action": "补齐完整诊断结论与支持范围；保持业务耗时和上报耗时分开。"
+    },
+    {
+      "record_id": "inference:example-inference",
+      "validity": "invalid",
+      "intent": [
+        "conversation"
+      ],
+      "support": "not_applicable",
+      "badcase": "not_observed",
+      "correctness": "not_applicable",
+      "root_cause": "unknown",
+      "reason": "问候“您好”没有明确业务问题，不计入有效业务问题；请求与响应模型不同仅为路由观察，不能自动认定模型错误。",
+      "evidence_refs": [
+        "inference:example-inference:e0",
+        "inference:example-inference:e1"
+      ],
+      "capability_refs": [],
+      "evaluation_refs": [],
+      "confidence": 0.9,
+      "suggested_action": "确认模型路由配置；如评估问候回复质量，另补完整回复和评测依据。"
+    }
+  ],
+  "capabilities_fingerprint": "2c304e619d1822fd1502d7e711b0876d78baae7fa6d64cc53b8ea388fac285c2"
+}

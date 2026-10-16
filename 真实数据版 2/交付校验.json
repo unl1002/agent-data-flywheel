@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-10-15T15:31:10.134590+00:00",
+  "skill_validation": "passed",
+  "python_tests": 71,
+  "javascript_tests": 27,
+  "all_default_question_records_reviewed": 509,
+  "analysis_fingerprint": "f98fbdab75d59d56d753ca51f3688c2fddf3a7cf97315502eeb6fdb923b19e05",
+  "source_audit": {
+    "records": 19991,
+    "source_rows": 19991,
+    "analysis_traces": 116,
+    "review_traces": 213,
+    "checked_files": 4,
+    "checked_raw_rows": 19991,
+    "reference_occurrences": 602257
+  },
+  "source_audit_ok": true,
+  "preserved_original_documents": true,
+  "github_uploaded_this_version": false,
+  "artifacts": {
+    "分析结果/analysis.json": {
+      "bytes": 143938450,
+      "sha256": "d5b6642740f22b97e7673da213b1d04fdefee62f0e392eb4dcfac5d05ee1a28e"
+    },
+    "分析结果/ai_reviews.json": {
+      "bytes": 719569,
+      "sha256": "07b22b8fe0d9a62d4f1f1d97df79e908a7305da2d2428c3fccfa2fc2f669fbb5"
+    },
+    "分析结果/reviewed_analysis.json": {
+      "bytes": 154813473,
+      "sha256": "838e3b094287c49ff08d62b9978355be6f275308d99eefa41f662db20a2e8638"
+    },
+    "分析结果/dashboard.html": {
+      "bytes": 25081551,
+      "sha256": "73c0ab70c28c8c3333b0dbd647b8222ea96f1981caa278a6e5dd1b8d27d59c35"
+    }
+  },
+  "ui_change": "指标字典与计算依据独立成页，位于项目月度使用之后；键盘切换、指标血缘及27项JavaScript测试通过。"
+}
